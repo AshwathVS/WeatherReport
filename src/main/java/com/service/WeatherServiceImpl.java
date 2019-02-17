@@ -96,7 +96,7 @@ public class WeatherServiceImpl implements WeatherService {
         }
 
 
-        /****/
+        /**Yet to do**/
 //        monthlyWeatherReportEntity.setWasThereAtleaseOneSmokeHazardDay();
 //
 //        /****/
