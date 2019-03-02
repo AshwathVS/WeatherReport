@@ -81,10 +81,10 @@ public class WeatherController {
         else{
             String[] splitDate = date.split("/");
             Long month = Long.parseLong(splitDate[0]);
-            Long year = Long.parseLong(splitDate[1]);
             if(month > 12 || month <= 0){
                 throw new IllegalArgumentException("Month value Invalid");
             }
+            Long.parseLong(splitDate[1]);
         }
     }
 
