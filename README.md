@@ -1,1 +1,5 @@
-Brief weather reporting API with a rdu weather history dataset
+Weather Analysis & Reporting Tool for Town of Cary, North Carolina.
+
+
+Note:
+CSV File present in resources folder
