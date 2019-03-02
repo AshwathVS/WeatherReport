@@ -6,7 +6,6 @@ import com.service.WeatherService;
 import com.weather.report.weather.report.com.entity.AllTimeWeatherReportEntity;
 import com.weather.report.weather.report.com.entity.MonthlyWeatherReportEntity;
 import com.weather.report.weather.report.com.entity.WeatherEntity;
-import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
+import java.util.IllegalFormatException;
 
 @Controller
 @RequestMapping("/weather")
@@ -65,11 +65,26 @@ public class WeatherController {
     @RequestMapping("/monthlyWeatherReport")
     public ResponseEntity<GenericResponse> getMonthlyReport(@RequestParam("date") String date){
         try{
+            validateDateString(date);
             MonthlyWeatherReportEntity monthlyWeatherReportEntity = weatherService.getMonthlyReport(date);
             return new ResponseEntity<>(new GenericResponse<>(monthlyWeatherReportEntity, null), HttpStatus.OK);
         }
         catch (Exception ex){
-            return new ResponseEntity<>(new GenericResponse(null, ErrorDTO.getDefaultErrorDTO("EXCEPTION!", ex.getMessage())), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new GenericResponse(null, ErrorDTO.getDefaultErrorDTO(ex.getClass().getName(), ex.getMessage())), HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    private void validateDateString(String date) throws NumberFormatException, IllegalArgumentException{
+        if(!date.contains("/")){
+            throw new IllegalArgumentException("Input must be of format MM/YYYY.");
+        }
+        else{
+            String[] splitDate = date.split("/");
+            Long month = Long.parseLong(splitDate[0]);
+            Long year = Long.parseLong(splitDate[1]);
+            if(month > 12 || month <= 0){
+                throw new IllegalArgumentException("Month value Invalid");
+            }
         }
     }
 
