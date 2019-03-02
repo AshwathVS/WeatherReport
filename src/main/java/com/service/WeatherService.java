@@ -10,5 +10,5 @@ public interface WeatherService {
     WeatherEntity getWeatherEntityByDate(Date date);
     WeatherEntity getClosestWeatherEntityByDate(Date date);
     AllTimeWeatherReportEntity getAllTimeWeatherReport();
-    MonthlyWeatherReportEntity getMonthyReport(String date);
+    MonthlyWeatherReportEntity getMonthlyReport(String date);
 }

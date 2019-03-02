@@ -1,11 +1,12 @@
 package com.weather.report.weather.report;
 
+import com.service.CSVtoMapReadService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Collections;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com")
 public class Application {
 
 	public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class Application {
 		app.setDefaultProperties(Collections
 				.singletonMap("server.port", "8083"));
 		app.run(args);
+		CSVtoMapReadService.fillDataSet();
 	}
 
 }

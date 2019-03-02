@@ -653,6 +653,7 @@ date;temperaturemin;temperaturemax;precipitation;snowfall;snowdepth;avgwindspeed
 2019-01-29;30.9;54.0;0.16;0.0;0.0;8.95;250;23.94;260;31.09;Yes;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No
 2019-02-02;28.9;60.1;0.0;0.0;0.0;3.8;210;10.07;190;14.09;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No
 2019-02-07;60.1;79.0;0.0;0.0;0.0;;;;;;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No
+2019-02-15;60.1;79.0;10.0;0.0;0.0;;;;;;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No
 2009-10-03;55.0;82.0;0.0;0.0;0.0;2.91;240;16.11;230;19.91;Yes;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No;No
 2009-10-10;59.0;79.0;0.02;0.0;0.0;7.83;220;17.0;220;21.92;No;No;No;Yes;No;No;No;No;No;No;No;No;No;Yes;No;No;No
 2009-10-14;46.9;61.0;0.14;0.0;0.0;8.72;40;14.99;50;21.03;Yes;No;Yes;Yes;No;No;No;Yes;No;No;No;No;No;Yes;No;No;No
